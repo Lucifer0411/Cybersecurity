@@ -1,0 +1,231 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Task4InterviewQ</title>
+</head><body><b><div style="text-align: center"><span style="font-family: Sylfaen"><span style="font-size: 18pt">TASK 4 INTEVIEW QUESTIONS<br/>
+<br/>
+</span></span></div></b><span style="font-family: Sylfaen"><span style="background-color: #ffff00"><span style="font-size: 16pt">1.What is a firewall?</span></span></span><br/>
+<span style="font-family: Sylfaen"><span style="font-size: 14pt"><br/>
+A <b>firewall</b>is a network security device (or software) that monitors and controls incoming and outgoing traffic based on predefined rules. Its main job is to create a protective barrier between a <b>trusted internal network</b>and <b>untrusted external networks</b>, such as the internet.<br/>
+<br/>
+<b>How It Works</b><br/>
+<ul><li><b>Packet Filtering:</b>Inspects data packets and allows or blocks them based on IP addresses, ports, or protocols.</li>
+</ul>
+<ul><li><b>Stateful Inspection:</b>Tracks the state of active connections and makes decisions based on context.</li>
+</ul>
+<ul><li><b>Proxy Service:</b>Acts as an intermediary between users and the internet, hiding internal network details.</li>
+</ul>
+<ul><li><b>Next-Gen Firewalls (NGFW):</b>Include deep packet inspection, intrusion prevention, and application-level filtering. </li>
+</ul>
+<br/>
+<b>Types of Firewalls </b><br/>
+<br/>
+<div style="text-align: center"><img height="209" src="typeoffirewall.png" width="700"/></div><br/>
+<b>Why It Matters</b><br/>
+<ul><li>Blocks unauthorized access</li>
+<li>Prevents malware and cyberattacks</li>
+<li>Enforces organizational security policies</li>
+<li>Logs traffic for auditing and analysis </li>
+</ul>
+<br/>
+</span></span><span style="font-family: Sylfaen"><span style="background-color: #ffff00"><span style="font-size: 16pt">2.Difference between stateful and stateless firewall? </span></span></span><br/>
+<br/>
+<span style="font-size: 14pt"><span style="font-family: Sylfaen"><br/>
+<b>Stateful vs Stateless Firewalls </b><br/>
+<br/>
+<div style="text-align: center"><img height="364" src="firewall2.png" width="750"/><br/>
+</div>Analogy<br/>
+Think of a <b>stateless firewall</b>like a bouncer who checks each person at the door without remembering who came in before. A <b>stateful firewall</b>is like a concierge who knows which guests are already inside and what they’re doing.<br/>
+</span></span> <br/>
+<span style="background-color: #ffff00"><span style="font-size: 16pt"><span style="font-family: Sylfaen">3.What are inbound and outbound rules? </span></span></span><br/>
+<span style="font-size: 14pt"><span style="font-family: Sylfaen"><br/>
+<b>Inbound vs Outbound Rules in Firewalls </b><br/>
+<br/>
+<div style="text-align: center"><img height="247" src="firewall3.png" width="700"/><br/>
+<br/>
+</div><b>How They Work</b><br/>
+<ul><li><b>Inbound Rule Example:</b>Allow HTTP traffic (port 80) from the internet to a web server.</li>
+<li><b>Outbound Rule Example:</b>Allow internal users to access external DNS servers (port 53). </li>
+</ul>
+<br/>
+<b>Why They Matter</b><br/>
+<ul><li><b>Inbound rules</b>protect against unauthorized access and external threats.</li>
+<li><b>Outbound rules</b>prevent data exfiltration and control what internal systems can reach. </li>
+</ul>
+<br/>
+<b>Best Practices</b><br/>
+</span></span><ul><li><span style="font-size: 14pt"><span style="font-family: Sylfaen">Use <b>least privilege</b>: only allow traffic that’s necessary.</span></span></li>
+<span style="font-size: 14pt"><span style="font-family: Sylfaen"><li>Regularly audit rules to avoid misconfigurations.</li>
+<li>Combine with logging and monitoring for visibility. </li>
+</span></span></ul>
+<br/>
+<span style="background-color: #ffff00"><span style="font-family: Sylfaen"><span style="font-size: 16pt">4.How does UFW simplify firewal management? </span></span></span><br/>
+<span style="font-family: Sylfaen"><span style="font-size: 14pt"><br/>
+UFW (Uncomplicated Firewall) is a simple front end for managing Linux iptables rules that makes firewall configuration accessible and less error prone by exposing an intuitive command set and sensible defaults <br/>
+<br/>
+<b>How UFW simplifies firewall management</b><br/>
+<ul><li><b>Simple command syntax</b>— single-line commands to allow or deny services reduce complexity compared with raw iptables rules</li>
+</ul>
+<ul><li><b>Secure defaults</b>— UFW ships with conservative defaults so systems start in a safer state without extra configuration.</li>
+</ul>
+<ul><li><b>Application profiles</b>— prebuilt profiles let you allow common services by name instead of ports, reducing mistakes and saving time</li>
+</ul>
+<ul><li><b>IPv6 support built in</b>— UFW supports IPv6 alongside IPv4 without extra manual configuration.</li>
+</ul>
+<ul><li><b>Logging and status commands</b>— easy commands to view active rules and logs improve visibility for admins.</li>
+</ul>
+<br/>
+<b>Best practices when using UFW</b><br/>
+<ul><li><b>Use least privilege</b>: only allow required ports and services.</li>
+</ul>
+<ul><li><b>Enable logging</b>at an appropriate level for threat hunting and troubleshooting.</li>
+</ul>
+<ul><li><b>Apply application profiles</b>when available to avoid exposing extra ports.</li>
+</ul>
+<ul><li><b>Test rules with a management session</b>(keep an open admin SSH session until you confirm remote access works).</li>
+</ul>
+<ul><li><b>Combine UFW with higher-level network controls</b>(cloud security groups, host-based intrusion detection) for layered defense.</li>
+</ul>
+<br/>
+</span></span><span style="font-family: Sylfaen"><span style="background-color: #ffff00"><span style="font-size: 16pt">5.Why block port 23 (Telnet)? </span></span></span><br/>
+<span style="font-size: 14pt"><span style="font-family: Sylfaen"><br/>
+Port 23 is the well-known TCP port assigned to the Telnet protocol, which provides plain-text, remote command-line access to devices over a network. <br/>
+<br/>
+<b>Why block port 23</b><br/>
+<ul><li><b>No encryption</b>— Telnet sends usernames, passwords, and commands in clear text, allowing attackers who can sniff traffic to capture credentials.</li>
+<li><b>High exploit surface</b>— Many legacy Telnet implementations and embedded devices contain unpatched vulnerabilities that attackers can abuse.</li>
+<li><b>Automated scanning and brute force</b>— Port 23 is commonly scanned by bots and adversaries looking for weak credentials or exposed devices.</li>
+<li><b>Risk of lateral movement and persistence</b>— If compromised via Telnet, attackers often use the access to move laterally, implant backdoors, or exfiltrate data.</li>
+<li><b>Noncompliance with modern security policies</b>— Most security standards and best practices require encrypted remote management and deny insecure protocols. </li>
+</ul>
+<br/>
+<b>Typical blocking scope</b><br/>
+<ul><li>Block at perimeter firewalls to prevent inbound Telnet from the internet.</li>
+</ul>
+<ul><li>Block or restrict outbound Telnet for user hosts to prevent unauthorized remote access attempts.</li>
+</ul>
+<ul><li>Deny Telnet on cloud security groups and on host-based firewalls by default</li>
+</ul>
+<br/>
+<b>Safer alternatives</b><br/>
+<ul><li>Use SSH (port 22) with strong key-based authentication and hardened configurations.</li>
+<li>Use VPN or management jump hosts/bastion hosts for administrative access combined with multifactor authentication.</li>
+<li>Use centralized management/orchestration and audited remote command execution tools. </li>
+</ul>
+<br/>
+<b>Practical mitigations if Telnet must remain</b><br/>
+<ul><li>Restrict access by IP allowlists and network segmentation.</li>
+</ul>
+<ul><li>Run Telnet only on isolated management networks, never on general production networks.</li>
+</ul>
+<ul><li>Monitor and log all access; deploy intrusion detection and rate-limiting.</li>
+</ul>
+<ul><li>Apply compensating controls such as jump hosts, strict credential policies, and continuous vulnerability management.</li>
+</ul>
+<br/>
+</span></span><span style="font-family: Sylfaen"><span style="font-size: 16pt"><span style="background-color: #ffff00">6.What are common firewal mistakes? </span></span></span><br/>
+<span style="font-family: Sylfaen"><span style="font-size: 14pt"><br/>
+<b>Common firewall mistakes</b><br/>
+<ul><li><b>Overly permissive rules</b>— Allowing many open ports or broad IP ranges increases attack surface and lets unnecessary traffic through; apply least privilege and close unused ports.</li>
+</ul>
+<ul><li><b>Unrestricted management access</b>— Exposing the firewall management interface to general networks or the internet lets attackers target device controls; restrict management to isolated VLANs or management networks and use strong authentication. </li>
+</ul>
+<ul><li><b>Lack of rule ordering and cleanup</b>— Redundant, shadowed, or obsolete rules cause unexpected behavior and hide risky permissions; regularly audit, reorder, and remove stale rules.</li>
+</ul>
+<ul><li><b>Using any/any or wide network objects</b>— Relying on generic objects like any/any or large CIDR blocks makes intent unclear and creates blind spots; use specific hosts, ports, and narrow network ranges. </li>
+</ul>
+<ul><li><b>Missing outbound controls</b>— Only filtering inbound traffic leaves data-exfiltration and malware callbacks unchecked; enforce outbound policies and monitor egress traffic.</li>
+</ul>
+<ul><li><b>Weak or inconsistent logging and monitoring</b>— Poor logging settings or not reviewing logs reduce detection capability; enable adequate logging, centralize logs, and integrate with SIEM. </li>
+</ul>
+<ul><li><b>Not testing changes or lacking change control</b>— Applying rules without testing or rollback procedures risks outages and misconfigurations; test in staging, use versioned configs, and keep a rollback plan.</li>
+</ul>
+<br/>
+<b>Quick mitigations</b><br/>
+<ul><li><b>Audit schedule:</b>run periodic rule reviews and automated analysis.</li>
+</ul>
+<ul><li><b>Principle of least privilege:</b>allow only required traffic.</li>
+</ul>
+<ul><li><b>Change control:</b>test changes, use versioning, and maintain rollback procedures.</li>
+</ul>
+</span></span><ul><span style="font-family: Sylfaen"><span style="font-size: 14pt"><li><b>Visibility:</b>enable logging, centralize logs, and correlate with endpoint and network telemetry.</li>
+</span></span></ul>
+<br/>
+<span style="font-family: Sylfaen"><span style="background-color: #ffff00"><span style="font-size: 16pt">7.How does a firewal improve network security? </span></span></span><br/>
+<span style="font-family: Sylfaen"><span style="font-size: 14pt"><br/>
+A firewall enforces network access rules at the boundary between trusted and untrusted networks, acting as a first line of defense that blocks unwanted traffic and reduces the attack surface <br/>
+<br/>
+<b>Primary functions</b><br/>
+<ul><li><b>Traffic filtering</b>— Allows or blocks packets based on IP, port, protocol, or application.</li>
+</ul>
+<ul><li><b>State tracking</b>— Applies context-aware decisions for established connections.</li>
+</ul>
+<ul><li><b>Application awareness</b>— Identifies and enforces rules for specific applications and services.</li>
+</ul>
+<ul><li><b>Logging and alerting</b>— Records traffic events for detection and forensic analysis.</li>
+</ul>
+<ul><li><b>Policy enforcement</b>— Centralizes and enforces security policies across hosts and segments.</li>
+</ul>
+<br/>
+<b>Concrete security benefits</b><br/>
+<ul><li><b>Prevents unauthorized access</b>by denying connections that violate policy.</li>
+</ul>
+<ul><li><b>Reduces malware exposure</b>by blocking known malicious endpoints and risky services.</li>
+</ul>
+<ul><li><b>Limits lateral movement</b>by segmenting networks and restricting inter-zone traffic.</li>
+</ul>
+<ul><li><b>Controls data exfiltration</b>with outbound rules and deep inspection.</li>
+</ul>
+<ul><li><b>Improves visibility and detection</b>through logs and integration with monitoring and SIEM systems</li>
+</ul>
+<br/>
+<b>Best-practice checklist</b><br/>
+<ul><li>Apply least-privilege rules and deny by default.</li>
+</ul>
+<ul><li>Restrict administrative access to management networks only.</li>
+</ul>
+<ul><li>Regularly audit and remove stale rules.</li>
+</ul>
+<ul><li>Enable and forward logs to a central collector or SIEM.</li>
+</ul>
+<ul><li>Use application-aware and TLS inspection selectively where needed.</li>
+</ul>
+</span></span><span style="font-family: Sylfaen"><span style="font-size: 14pt"/></span><br/>
+<span style="font-family: Sylfaen"><span style="font-size: 16pt"><span style="background-color: #ffff00">8.What is NAT in firewalls? </span></span></span><br/>
+<span style="font-size: 14pt"><span style="font-family: Sylfaen"><br/>
+<b>Network Address Translation</b><br/>
+<br/>
+<b>Network Address Translation (NAT)</b>is a technique firewalls and routers use to rewrite IP address information in packet headers so devices on a private network can communicate with external networks while sharing one or more public IP addresses<br/>
+ <br/>
+<b>How NAT works in firewalls</b><br/>
+<ul><li><b>Outgoing traffic translation</b>: The firewall replaces a private source IP with a public IP and records the mapping so return packets are forwarded to the correct internal host</li>
+</ul>
+<ul><li><b>Incoming traffic blocking by default</b>: Unsolicited inbound packets are dropped because no mapping exists unless an explicit mapping or port forward is configured.</li>
+</ul>
+<ul><li><b>Stateful mapping</b>: The firewall tracks active translations and connection state to route responses correctly and allow only expected return traffic</li>
+</ul>
+<br/>
+<b>Common NAT types implemented by firewalls</b><br/>
+<ul><li><b>Static NAT (one-to-one)</b>: Maps a single internal IP to a single public IP for consistent inbound reachability.</li>
+</ul>
+<ul><li><b>Dynamic NAT (many-to-many)</b>: Maps internal IPs to a pool of public IPs on demand.</li>
+</ul>
+<ul><li><b>Port Address Translation PAT (many-to-one)</b>: Also called NAT overload; maps many private hosts to one public IP by using unique source ports.</li>
+</ul>
+<br/>
+<b>Limitations and considerations</b><br/>
+<ul><li><b>Breaks end-to-end addressing</b>for protocols that embed IPs or use multiple ports requiring application-level helpers or NAT traversal.</li>
+</ul>
+<ul><li><b>Complicates logging and forensics</b>because mappings must be correlated to identify specific internal hosts.</li>
+</ul>
+<ul><li><b>Not a substitute for firewall policy</b>: NAT controls addressing and reachability while firewall rules and application inspection enforce security intent.</li>
+</ul>
+<br/>
+<b>Typical use cases</b><br/>
+<ul><li>Small networks and home routers using PAT to share one public IP.</li>
+</ul>
+<ul><li>Per-server static NAT for hosting public services while keeping internal addressing private.</li>
+</ul>
+</span></span><ul><span style="font-size: 14pt"><span style="font-family: Sylfaen"><li>Firewalls combining NAT with ACLs and application inspection to control and log traffic. </li>
+</span></span></ul>
+</body></html>
